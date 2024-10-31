@@ -1,3 +1,5 @@
+using Microsoft.Data.Sqlite;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,3 +27,18 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+try
+{
+    using var connection = new SqliteConnection("Data Source=Library.db");
+    connection.Open();
+
+    // Interacting with the database 
+    // ...
+
+}
+catch (SqliteException e)
+{
+    // Display the exception
+    Console.WriteLine(e.Message);
+}
