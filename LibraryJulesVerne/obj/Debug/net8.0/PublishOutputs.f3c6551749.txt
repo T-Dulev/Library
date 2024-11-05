@@ -1,0 +1,7 @@
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\LibraryJulesVerne.exe
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\appsettings.Development.json
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\appsettings.json
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\LibraryJulesVerne.dll
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\LibraryJulesVerne.deps.json
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\LibraryJulesVerne.runtimeconfig.json
+H:\VS2022\Library\LibraryJulesVerne\obj\Debug\net8.0\PubTmp\Out\LibraryJulesVerne.pdb

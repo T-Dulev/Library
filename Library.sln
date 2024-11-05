@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library.csproj", "{7ED5EC05-91DA-4B24-827E-1C16A8C3BF26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{7ED5EC05-91DA-4B24-827E-1C16A8C3BF26}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateLibrary", "GenerateLibrary\GenerateLibrary.csproj", "{5253A914-4CC7-4F21-8F37-BE9B13DC2395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryJulesVerne", "LibraryJulesVerne\LibraryJulesVerne.csproj", "{AA398C2C-EC30-45B4-A33A-2A88BEE96F50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5253A914-4CC7-4F21-8F37-BE9B13DC2395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5253A914-4CC7-4F21-8F37-BE9B13DC2395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5253A914-4CC7-4F21-8F37-BE9B13DC2395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA398C2C-EC30-45B4-A33A-2A88BEE96F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA398C2C-EC30-45B4-A33A-2A88BEE96F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA398C2C-EC30-45B4-A33A-2A88BEE96F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA398C2C-EC30-45B4-A33A-2A88BEE96F50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
