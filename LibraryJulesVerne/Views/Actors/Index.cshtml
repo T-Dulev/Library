@@ -1,0 +1,44 @@
+﻿
+@{
+}
+<h1>Actors - Index</h1>
+
+<body>
+    <h1>Търсене на книги</h1>
+    <form id="searchForm">
+        <label for="search_term">Търсене по заглавие или автор:</label>
+        <input type="text" id="search_term" name="search_term" required>
+        <input type="submit" value="Търси">
+    </form>
+    <div id="results"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('searchForm');
+            const resultsDiv = document.getElementById('results');
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                const searchTerm = document.getElementById('search_term').value;
+                try {
+                    const response = await fetch(`http://localhost:5000/Actors/Index?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+                    const data = await response.json();
+                    let output = '';
+                    if (data.length > 0) {
+                        output += '<ul>';
+                        for (const book of data) {
+                            output += `<li>${book.title} - ${book.author}</li>`;
+                        }
+                        output += '</ul>';
+                    } else {
+                        output = 'Няма намерени резултати.';
+                    }
+                    resultsDiv.innerHTML = output;
+                } catch (error) {
+                    //console.error('Error:', error);
+                    resultsDiv.innerHTML = 'Грешка при търсенето.';
+                }
+            });
+        });
+    </script>
+</body>

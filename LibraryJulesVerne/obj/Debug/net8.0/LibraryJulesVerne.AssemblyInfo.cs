@@ -11,11 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d3f0b03e-026e-4de7-89ce-f6c8522c31cd")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("2ae00122-bd3e-4bad-9c0f-861e4ec8fbd7")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fa434a2f7f1f37ac63dbca01ac6cd71b3b0a44e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b5f364a0e341c40785065bee7f71f0f9cb0ce58")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

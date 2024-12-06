@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\VS2022\\Library\\LibraryJulesVerne\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\libraryjulesvernecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:libraryjulesvernecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\libraryjulesverne.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94ABA8A-4879-4371-ACC0-BCA86576F6C6}|LibraryJulesVerne.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAD4vxUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T21:43:23.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvw8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T21:39:31.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T21:36:13.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LibraryJulesVerne.csproj",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerne.csproj",
+              "RelativeDocumentMoniker": "LibraryJulesVerne.csproj",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerne.csproj",
+              "RelativeToolTip": "LibraryJulesVerne.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-11T17:08:43.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:01:35.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LibraryJulesVerneContext.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerneContext.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "RelativeToolTip": "LibraryJulesVerneContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T16:39:19.233Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
