@@ -21,6 +21,13 @@ namespace LibraryJulesVerne.Controllers
             return View();
         }
 
+        // GET: api/Readers
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Reader>>> GetReaders(string name)
+        {
+            var res = _context.Readers.Where(a => a.FirstName.Contains(name) || a.LastName.Contains(name)).ToListAsync();
+            return await res;
+        }
 
         [HttpGet("search")]
         public async Task<IActionResult> SearchReaders([FromQuery] SearchModel searchModel)

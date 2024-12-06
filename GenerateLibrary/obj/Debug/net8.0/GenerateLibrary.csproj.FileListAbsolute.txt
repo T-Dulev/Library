@@ -40,12 +40,6 @@ H:\VS2022\GenerateLibrary\obj\Debug\net8.0\refint\GenerateLibrary.dll
 H:\VS2022\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.pdb
 H:\VS2022\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.genruntimeconfig.cache
 H:\VS2022\GenerateLibrary\obj\Debug\net8.0\ref\GenerateLibrary.dll
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.GeneratedMSBuildEditorConfig.editorconfig
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.AssemblyInfoInputs.cache
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.AssemblyInfo.cs
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.csproj.CoreCompileInputs.cache
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.sourcelink.json
-H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.csproj.AssemblyReference.cache
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\GenerateLibrary.exe
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\GenerateLibrary.deps.json
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\GenerateLibrary.runtimeconfig.json
@@ -68,6 +62,12 @@ H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\runtimes\linux-x64\native\lib
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\runtimes\osx-x64\native\libsqlite3.dylib
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\runtimes\win7-x64\native\sqlite3.dll
 H:\VS2022\Library\GenerateLibrary\bin\Debug\net8.0\runtimes\win7-x86\native\sqlite3.dll
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.csproj.AssemblyReference.cache
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.GeneratedMSBuildEditorConfig.editorconfig
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.AssemblyInfoInputs.cache
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.AssemblyInfo.cs
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.csproj.CoreCompileInputs.cache
+H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.sourcelink.json
 H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\Generate.AE8BB368.Up2Date
 H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\GenerateLibrary.dll
 H:\VS2022\Library\GenerateLibrary\obj\Debug\net8.0\refint\GenerateLibrary.dll
