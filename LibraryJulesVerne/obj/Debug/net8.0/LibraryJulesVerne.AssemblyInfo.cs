@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb9f919c3a0a5f0cf7e6f13d0adfe540c4c2624f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b7f4c345a51631492a0edd4443002c28b07f92f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibraryJulesVerne")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
