@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Да бъде ли създадена нова база данни Library.db (Y/N): ");
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -38,8 +40,9 @@ if (userInput == "Y")
 
 static SqliteConnection CreateConnection()
 {
+    SQLitePCL.Batteries.Init();
     SqliteConnection sqliteConn;
-    sqliteConn = new SqliteConnection("Data source=../../../../Library.db; version = 3; New = True; Conpress = True");
+    sqliteConn = new SqliteConnection("Data source=../../../../Library.db;");
     sqliteConn.Open();
 
     return sqliteConn;
@@ -72,7 +75,21 @@ static void CreateTable(SqliteConnection conn)
                     LastName varchar(50) NOT NULL,
                     EGN varchar(10) NOT NULL,
                     Email varchar(50) NOT NULL
-                )";
+                )"
+    ;
+    sqliteCommand.ExecuteNonQuery();
+
+    //Създаване на свързващата таблица BookLoans
+    sqliteCommand.CommandText = @"CREATE TABLE BookLoans(
+    loan_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id INT,
+    reader_id INT,
+    borrowed_date DATE,
+    returned_date DATE,
+    FOREIGN KEY(book_id) REFERENCES Books(id),
+    FOREIGN KEY(reader_id) REFERENCES Readers(id)
+    )"
+    ;
     sqliteCommand.ExecuteNonQuery();
 
     //попълване на тестови книги

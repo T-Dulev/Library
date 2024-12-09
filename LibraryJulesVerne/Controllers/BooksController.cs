@@ -28,6 +28,16 @@ namespace LibraryJulesVerne.Controllers
             return await _context.Books.Where(a => a.Title.Contains(title) || a.Author.Contains(title)).ToListAsync();
         }
 
+        // POST: api/Books/Create
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateBook([FromBody] Book book)
+        {
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        }
+
         // GET: api/Books/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBook(int id)

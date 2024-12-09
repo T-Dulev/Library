@@ -1,31 +1,5 @@
 [
   {
-    "ContainingType": "LibraryJulesVerne.Controllers.ActorsController",
-    "Method": "Index",
-    "RelativePath": "Actors",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "LibraryJulesVerne.Controllers.ActorsController",
-    "Method": "GetTextLength",
-    "RelativePath": "Actors",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "LibraryJulesVerne.Models.TextLengthModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "LibraryJulesVerne.Controllers.BooksController",
     "Method": "Index",
     "RelativePath": "Books",
@@ -155,6 +129,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LibraryJulesVerne.Controllers.BooksController",
+    "Method": "CreateBook",
+    "RelativePath": "Books/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "LibraryJulesVerne.Models.Book",
         "IsRequired": true
       }
     ],

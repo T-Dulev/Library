@@ -26,8 +26,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\VS2022\Library\LibraryJulesVerne
 build_property._RazorSourceGeneratorDebug = 
 
-[H:/VS2022/Library/LibraryJulesVerne/Views/Actors/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXEluZGV4LmNzaHRtbA==
+[H:/VS2022/Library/LibraryJulesVerne/Views/Books/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [H:/VS2022/Library/LibraryJulesVerne/Views/Books/Index.cshtml]
