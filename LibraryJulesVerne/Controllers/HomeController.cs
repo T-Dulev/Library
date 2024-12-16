@@ -27,6 +27,32 @@ namespace LibraryJulesVerne.Controllers
             return View();
         }
 
+        public IActionResult Books()
+        {
+            return View();
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult BookCreate()
+        {
+            return View();
+        }
+
+        // POST: Home/Create
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateBook([FromBody] Book book)
+        {
+            var _context = new LibraryJulesVerneContext();
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(BooksController.GetBook), new { id = book.Id }, book);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

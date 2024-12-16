@@ -14,15 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\Search.cshtml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ContainerPort Include="8081" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Models\Search.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -25,13 +25,18 @@ namespace LibraryJulesVerne.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks(string title)
         {
-            return await _context.Books.Where(a => a.Title.Contains(title) || a.Author.Contains(title)).ToListAsync();
+            return await _context.Books.Where(a => (a.Title != null && a.Title.Contains(title)) || (a.Author != null && a.Author.Contains(title))).ToListAsync();
         }
 
-        // POST: api/Books/Create
-        [HttpPost("Create")]
+        // POST: api/Books
+        [HttpPost]
         public async Task<IActionResult> CreateBook([FromBody] Book book)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
 
@@ -52,46 +57,46 @@ namespace LibraryJulesVerne.Controllers
             return book;
         }
 
-        // PUT: api/Books/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBook(int id, Book book)
-        {
-            if (id != book.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Books/5
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutBook(int id, Book book)
+        //{
+        //    if (id != book.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(book).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+        //    _context.Entry(book).State = EntityState.Modified;
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Books
-        [HttpPost]
-        public async Task<ActionResult<Book>> PostBook(Book book)
-        {
-            _context.Books.Add(book);
-            await _context.SaveChangesAsync();
+        //// POST: api/Books
+        //[HttpPost]
+        //public async Task<ActionResult<Book>> PostBook(Book book)
+        //{
+        //    _context.Books.Add(book);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
-        }
+        //    return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        //}
 
-        // DELETE: api/Books/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBook(int id)
-        {
-            var book = await _context.Books.FindAsync(id);
-            if (book == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Books/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteBook(int id)
+        //{
+        //    var book = await _context.Books.FindAsync(id);
+        //    if (book == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Books.Remove(book);
-            await _context.SaveChangesAsync();
+        //    _context.Books.Remove(book);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         public IActionResult GetRandomBooks()
         {

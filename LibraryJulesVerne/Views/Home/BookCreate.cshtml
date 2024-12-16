@@ -1,0 +1,84 @@
+﻿@model LibraryJulesVerne.Models.Book
+
+@{
+    ViewData["Title"] = "Създаване на книга";
+}
+
+<h1>Данни за книгата</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="BookCreate">
+            <label asp-for="Title" class="control-label"></label>
+            <input type="text" id="Title" name="Title" required><br />
+
+            <label asp-for="Isbn" class="control-label"></label>
+            <input type="text" id="Isbn" name="Isbn" required><br />
+
+            <label asp-for="Author" class="control-label"></label>
+            <input type="text" id="Author" name="Author" required><br />
+
+            <label asp-for="Genre" class="control-label"></label>
+            <input type="text" id="Genre" name="Genre" required><br />
+
+            <label asp-for="AvailableCount" class="control-label"></label>
+            <input type="number" id="AvailableCount" name="AvailableCount" min="0" required><br />
+
+            <input type="submit" value="BookCreate" class="btn btn-primary" />
+        </form>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('BookCreate');
+            const resultsDiv = document.getElementById('results');
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                const title = document.getElementById('Title').value;
+                const isbn = document.getElementById('Isbn').value;
+                const author = document.getElementById('Author').value;
+                const genre = document.getElementById('Genre').value;
+                const availableCount = document.getElementById('AvailableCount').value;
+
+                if (!title || !isbn || !author || !genre || !availableCount) {
+                    alert('Моля, попълнете всички полета.');
+                    return;
+                }
+
+                const bookData = {
+                    title: title,
+                    isbn: isbn,
+                    author: author,
+                    genre: genre,
+                    availableCount: parseInt(availableCount)
+                };
+
+                try {
+                    const response = await fetch('http://localhost:5000/books', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(bookData)
+                    });
+                    if (response.ok) {
+                        resultsDiv.innerHTML = response.json;
+                    }
+                } catch (error) {
+                    //console.error('Error:', error);
+                    resultsDiv.innerHTML = 'Грешка при търсенето. Error: ' + error;
+                }
+            });
+        });
+    </script>
+
+</div>
+
+<div>
+    <a asp-action="Index">Обратно към списъка</a>
+</div>
