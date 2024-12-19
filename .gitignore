@@ -51,3 +51,13 @@ Documentation/
 **/$RECYCLE.BIN/**
 **/System Volume Information/**
 /.vs/Library/FileContentIndex
+/GenerateLibrary/obj/Debug/net8.0/apphost.exe
+/GenerateLibrary/obj/Debug/net8.0/GenerateLibrary.assets.cache
+/GenerateLibrary/obj/Debug/net8.0/GenerateLibrary.csproj.FileListAbsolute.txt
+/.vs/ProjectEvaluation/library.metadata.v9.bin
+/.vs/ProjectEvaluation/library.projects.v9.bin
+/.vs/ProjectEvaluation/library.strings.v9.bin
+/.vs/Library/DesignTimeBuild/.dtbcache.v2
+/.vs/Library/v17/.futdcache.v2
+/.vs/Library/v17/DocumentLayout.backup.json
+/.vs/Library/v17/.suo
