@@ -42,6 +42,11 @@ namespace LibraryJulesVerne.Controllers
             return View();
         }
 
+        public IActionResult Readers()
+        {
+            return View();
+        }
+
         // POST: Home/Create
         [HttpPost("Create")]
         public async Task<IActionResult> CreateBook([FromBody] Book book)

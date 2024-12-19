@@ -12,51 +12,14 @@
 <table>
     <tr>
         <td width="30%" rowspan="2">
-            <b>СПРАВКИ</b><br>
+@*             <b>Бързи връзки</b><br>
             <a href="Books">Търсене на книги</a><br>
-            <a href="Books/create">Добави нова книга</a><br>
-            <a href="search">Търсене на автори</a><br>
+            <a href="BooksCreate">Добави нова книга</a><br>
             <a href="Readers">Търсене на потребители</a><br>
             <a href="missingbooks.cshtml">Невърнати книги</a>
-        </td>
+ *@        </td>
         <td width="40%">
-            <h1>Търсене на книги</h1>
-            <form id="searchFormBooks">
-                <label for="search_term">Търсене по заглавие или автор:</label>
-                <input type="text" id="search_term" name="search_term" required>
-                <input type="submit" value="Търси">
-            </form>
-            <div id="resultsBooks"></div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const form = document.getElementById('searchFormBooks');
-                    const resultsDiv = document.getElementById('resultsBooks');
-
-                    form.addEventListener('submit', async function (event) {
-                        event.preventDefault();
-                        const searchTerm = document.getElementById('search_term').value;
-                        try {
-                            const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
-                            const data = await response.json();
-                            let output = '';
-                            if (data.length > 0) {
-                                output += '<ul>';
-                                for (const book of data) {
-                                    output += `<li>${book.title} - ${book.author}</li>`;
-                                }
-                                output += '</ul>';
-                            } else {
-                                output = 'Няма намерени резултати.';
-                            }
-                            resultsDiv.innerHTML = output;
-                        } catch (error) {
-                            console.error('Error:', error);
-                            resultsDiv.innerHTML = 'Грешка при търсенето.';
-                        }
-                    });
-                });
-            </script>
+            
         </td>
         <td width="30%" rowspan="2">
             <p>Най-четените книги за месеца са:</p>
@@ -83,43 +46,7 @@
     </tr>
     <tr>
         <td width="40%">
-            <h1>Търсене на читатели</h1>
-            <form id="searchFormReaders">
-                <label for="search_term_readers">Търсене по име или фамилия:</label>
-                <input type="text" id="search_term_readers" name="search_term_readers" required>
-                <input type="submit" value="Търси">
-            </form>
-            <div id="resultsReaders"></div>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const form = document.getElementById('searchFormReaders');
-                    const resultsDiv = document.getElementById('resultsReaders');
-
-                    form.addEventListener('submit', async function (event) {
-                        event.preventDefault();
-                        const searchTerm = document.getElementById('search_term_readers').value;
-                        try {
-                            const response = await fetch(`http://localhost:5000/readers?name=${encodeURIComponent(searchTerm)}`);
-                            const data = await response.json();
-                            let output = '';
-                            if (data.length > 0) {
-                                output += '<ul>';
-                                for (const reader of data) {
-                                    output += `<li>${reader.firstName} ${reader.lastName}</li>`;
-                                }
-                                output += '</ul>';
-                            } else {
-                                output = 'Няма намерени резултати.';
-                            }
-                            resultsDiv.innerHTML = output;
-                        } catch (error) {
-                            console.error('Error:', error);
-                            resultsDiv.innerHTML = 'Грешка при търсенето.';
-                        }
-                    });
-                });
-            </script>
         </td>
     </tr>
 </table>

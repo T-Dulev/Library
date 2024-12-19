@@ -1,49 +1,91 @@
 ﻿@model LibraryJulesVerne.Models.Book
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Книги";
 }
 
-<h1>Create</h1>
-
-<h4>Book</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Isbn" class="control-label"></label>
-                <input asp-for="Isbn" class="form-control" />
-                <span asp-validation-for="Isbn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AvailableCount" class="control-label"></label>
-                <input asp-for="AvailableCount" class="form-control" />
-                <span asp-validation-for="AvailableCount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+        <h1>Търсене на книги</h1>
+        <form id="searchFormBooks">
+            <label for="search_term">Търсене по заглавие или автор:</label><br />
+            <input type="text" id="search_term" name="search_term" required>
+            <input type="submit" value="Търси">
         </form>
+        <div id="resultsBooks">въведете * за всички</div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('searchFormBooks');
+                const resultsDiv = document.getElementById('resultsBooks');
+
+                form.addEventListener('submit', async function (event) {
+                    event.preventDefault();
+                    const searchTerm = document.getElementById('search_term').value;
+                    try {
+                        const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+                        const data = await response.json();
+                        let output = '';
+                        if (data.length > 0) {
+                            output += '<ul>';
+                            for (const book of data) {
+                                output += `<li>${book.id} ${book.title} - ${book.author} ${book.isbn} `;
+                                output += `<button onclick="deleteBook(${book.id})">Изтрий</button>`;
+                                output += `</li>`;
+                            }
+                            output += '</ul>';
+                        } else {
+                            output = 'Няма намерени резултати.';
+                        }
+                        resultsDiv.innerHTML = output;
+                    } catch (error) {
+                        console.error('Error:', error);
+                        resultsDiv.innerHTML = 'Грешка при търсенето.';
+                    }
+                });
+            });
+
+            async function deleteBook(bookId) {
+                try {
+                    const response = await fetch(`http://localhost:5000/books/${bookId}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        // Обновяване на списъка след успешно изтриване
+                        await searchAndDisplayResults();
+                    } else {
+                        alert('Грешка при изтриването.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Грешка при изтриването.');
+                }
+            }
+
+            async function searchAndDisplayResults() {
+                const searchTerm = document.getElementById('search_term').value;
+                const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+                const data = await response.json();
+                let output = '';
+                if (data.length > 0) {
+                    output += '<ul>';
+                    for (const book of data) {
+                        output += `<li>${book.id} ${book.title} - ${book.author} ${book.isbn} `;
+                        output += `<button onclick="deleteBook(${book.id})">Изтрий</button>`;
+                        output += `</li>`;
+                    }
+                    output += '</ul>';
+                } else {
+                    output = 'Няма намерени резултати.';
+                }
+                resultsDiv.innerHTML = output;
+            }
+        </script>
     </div>
 </div>
-
+<br />
+<br />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Начало</a>
 </div>

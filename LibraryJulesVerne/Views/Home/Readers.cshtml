@@ -1,0 +1,53 @@
+﻿@model LibraryJulesVerne.Models.Reader
+
+@{
+    ViewData["Title"] = "Читатели";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <h1>Търсене на читатели</h1>
+        <form id="searchFormReaders">
+            <label for="search_term_readers">Търсене по име или фамилия:</label><br />
+            <input type="text" id="search_term_readers" name="search_term_readers" required>
+            <input type="submit" value="Търси">
+        </form>
+        <div id="resultsReaders">въведете * за всички</div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('searchFormReaders');
+                const resultsDiv = document.getElementById('resultsReaders');
+
+                form.addEventListener('submit', async function (event) {
+                    event.preventDefault();
+                    const searchTerm = document.getElementById('search_term_readers').value;
+                    try {
+                        const response = await fetch(`http://localhost:5000/readers?name=${encodeURIComponent(searchTerm)}`);
+                        const data = await response.json();
+                        let output = '';
+                        if (data.length > 0) {
+                            output += '<ul>';
+                            for (const reader of data) {
+                                output += `<li>${reader.firstName} ${reader.lastName}</li>`;
+                            }
+                            output += '</ul>';
+                        } else {
+                            output = 'Няма намерени резултати.';
+                        }
+                        resultsDiv.innerHTML = output;
+                    } catch (error) {
+                        console.error('Error:', error);
+                        resultsDiv.innerHTML = 'Грешка при търсенето.';
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Index">Начало</a>
+</div>

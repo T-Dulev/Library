@@ -25,8 +25,13 @@ namespace LibraryJulesVerne.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reader>>> GetReaders(string name)
         {
-            var res = _context.Readers.Where(a => a.FirstName.Contains(name) || a.LastName.Contains(name)).ToListAsync();
-            return await res;
+            if (name != "*")
+            {
+                return await _context.Readers.Where(a => a.FirstName.Contains(name) || a.LastName.Contains(name)).ToListAsync();
+            }
+            else {
+                return await _context.Readers.ToListAsync();
+            }
         }
 
     }

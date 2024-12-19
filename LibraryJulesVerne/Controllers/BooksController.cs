@@ -25,7 +25,14 @@ namespace LibraryJulesVerne.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks(string title)
         {
-            return await _context.Books.Where(a => (a.Title != null && a.Title.Contains(title)) || (a.Author != null && a.Author.Contains(title))).ToListAsync();
+            if (title != "*")
+            {
+                return await _context.Books.Where(a => (a.Title != null && a.Title.Contains(title)) || (a.Author != null && a.Author.Contains(title))).ToListAsync();
+            }
+            else
+            {
+                return await _context.Books.ToListAsync();
+            }
         }
 
         // POST: api/Books
@@ -43,8 +50,24 @@ namespace LibraryJulesVerne.Controllers
             return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
         }
 
-        // GET: api/Books/5
-        [HttpGet("{id}")]
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            var bookToDelete = _context.Books.FirstOrDefault(b => b.Id == id);
+            if (bookToDelete != null)
+            {
+                _context.Books.Remove(bookToDelete);
+                _context.SaveChanges();
+                return NoContent(); // Връща статус код 204 No Content
+            }
+            else
+            {
+                return NotFound(); // Връща статус код 404 Not Found, ако книгата не е намерена
+            }
+        }
+
+        //// GET: api/Books/5
+        //[HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
@@ -80,22 +103,6 @@ namespace LibraryJulesVerne.Controllers
         //    await _context.SaveChangesAsync();
 
         //    return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
-        //}
-
-        //// DELETE: api/Books/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteBook(int id)
-        //{
-        //    var book = await _context.Books.FindAsync(id);
-        //    if (book == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Books.Remove(book);
-        //    await _context.SaveChangesAsync();
-
-        //    return NoContent();
         //}
 
         public IActionResult GetRandomBooks()
