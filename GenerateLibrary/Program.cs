@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Collections.Generic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Да бъде ли създадена нова база данни Library.db (Y/N): ");
@@ -56,7 +57,7 @@ static void CreateTable(SqliteConnection conn)
     sqliteCommand = conn.CreateCommand();
     sqliteCommand.CommandText = createSQL;
     sqliteCommand.ExecuteNonQuery();
-    
+
     //създаване на таблица за книгите
     sqliteCommand.CommandText = @"CREATE TABLE IF NOT EXISTS Books (
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,7 +68,7 @@ static void CreateTable(SqliteConnection conn)
                     AvailableCount INTEGER NOT NULL DEFAULT 0
                 )";
     sqliteCommand.ExecuteNonQuery();
-    
+
     //създаване на таблица за читателите
     sqliteCommand.CommandText = @"CREATE TABLE IF NOT EXISTS Readers (
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -75,8 +76,7 @@ static void CreateTable(SqliteConnection conn)
                     LastName varchar(50) NOT NULL,
                     EGN varchar(10) NOT NULL,
                     Email varchar(50) NOT NULL
-                )"
-    ;
+                )";
     sqliteCommand.ExecuteNonQuery();
 
     //Създаване на свързващата таблица BookLoans
@@ -88,8 +88,7 @@ static void CreateTable(SqliteConnection conn)
     returned_date DATE,
     FOREIGN KEY(book_id) REFERENCES Books(id),
     FOREIGN KEY(reader_id) REFERENCES Readers(id)
-    )"
-    ;
+    )";
     sqliteCommand.ExecuteNonQuery();
 
     //попълване на тестови книги
@@ -130,5 +129,28 @@ static void CreateTable(SqliteConnection conn)
                 ";
     sqliteCommand.ExecuteNonQuery();
 
-    
+    //Попълване на таблицата BookLoans с 20 тестови записа
+    sqliteCommand.CommandText = @"INSERT INTO BookLoans(book_id, reader_id, borrowed_date, returned_date) VALUES
+                    (1, 3, '2023-09-01', NULL),
+                    (4, 1, '2023-08-15', '2023-09-01'),
+                    (7, 2, '2023-07-20', '2023-08-10'),
+                    (10, 5, '2023-06-10', NULL),
+                    (13, 4, '2023-05-01', '2023-06-01'),
+                    (16, 3, '2023-04-15', NULL),
+                    (19, 2, '2023-03-20', '2023-04-10'),
+                    (2, 1, '2023-02-05', NULL),
+                    (5, 5, '2023-01-15', '2023-02-01'),
+                    (8, 4, '2022-12-20', NULL),
+                    (11, 3, '2022-11-10', '2022-12-05'),
+                    (14, 2, '2022-10-01', NULL),
+                    (17, 1, '2022-09-15', '2022-10-01'),
+                    (20, 5, '2022-08-20', NULL),
+                    (3, 4, '2022-07-05', '2022-08-01'),
+                    (6, 3, '2022-06-15', NULL),
+                    (9, 2, '2022-05-10', '2022-06-05'),
+                    (12, 1, '2022-04-01', NULL),
+                    (15, 5, '2022-03-15', '2022-04-01'),
+                    (18, 4, '2022-02-20', NULL);
+                ";
+    sqliteCommand.ExecuteNonQuery();
 }

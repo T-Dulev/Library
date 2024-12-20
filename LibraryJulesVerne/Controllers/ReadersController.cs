@@ -29,7 +29,8 @@ namespace LibraryJulesVerne.Controllers
             {
                 return await _context.Readers.Where(a => a.FirstName.Contains(name) || a.LastName.Contains(name)).ToListAsync();
             }
-            else {
+            else 
+            {
                 return await _context.Readers.ToListAsync();
             }
         }

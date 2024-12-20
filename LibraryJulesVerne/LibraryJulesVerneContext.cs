@@ -9,6 +9,6 @@ namespace LibraryJulesVerne.Context
         public DbSet<Reader> Readers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("Data source=../../Library.db");
+            => options.UseSqlite("Data source=../Library.db");
     }
 }
