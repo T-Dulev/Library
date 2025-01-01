@@ -1,0 +1,54 @@
+﻿@model IEnumerable<LibraryJulesVerne.Models.Book>
+@{
+    ViewData["Title"] = "Взети книги";
+}
+
+<h1>Взети книги</h1>
+<div class="row">
+    <table id="booksTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Заглавие</th>
+                <th>Автор</th>
+                <th>Читател</th>
+                <th>Дата на вземане</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+<div>
+    <a asp-action="Index">Начало</a>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: '/api/Book/unreturned',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var rows = '';
+                    $.each(data, function (index, item) {
+                        rows += '<tr>' +
+                            '<td>' + item.title + '</td>' +
+                            '<td>' + item.author + '</td>' +
+                            '<td>' + item.firstName + ' ' + item.lastName + '</td>' +
+                            '<td>' + item.borrowedDate + '</td>' +
+                            '</tr>';
+                    });
+                    $('#booksTable tbody').append(rows);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+}
