@@ -11,5 +11,18 @@ namespace LibraryJulesVerne.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data source=../Library.db");
+    
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BookLoan>()
+                .HasOne(bl => bl.Book)
+                .WithMany(b => b.BookLoans)
+                .HasForeignKey(bl => bl.book_id);
+
+            modelBuilder.Entity<BookLoan>()
+                .HasOne(bl => bl.Reader)
+                .WithMany(r => r.BookLoans)
+                .HasForeignKey(bl => bl.reader_id);
+        }
     }
 }

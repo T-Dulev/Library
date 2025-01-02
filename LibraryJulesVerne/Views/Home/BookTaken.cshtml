@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LibraryJulesVerne.Models.Book>
+﻿@model IEnumerable<LibraryJulesVerne.Models.UnreturnedBook>
 @{
     ViewData["Title"] = "Взети книги";
 }
@@ -14,41 +14,20 @@
                 <th>Дата на вземане</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.FirstName @book.LastName</td>
+                    <td>@book.BorrowedDate</td>
+                </tr>
+            }
+        </tbody>
     </table>
 </div>
-
-
-
 
 <div>
     <a asp-action="Index">Начало</a>
 </div>
-
-@section Scripts {
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.ajax({
-                url: '/api/Book/unreturned',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    var rows = '';
-                    $.each(data, function (index, item) {
-                        rows += '<tr>' +
-                            '<td>' + item.title + '</td>' +
-                            '<td>' + item.author + '</td>' +
-                            '<td>' + item.firstName + ' ' + item.lastName + '</td>' +
-                            '<td>' + item.borrowedDate + '</td>' +
-                            '</tr>';
-                    });
-                    $('#booksTable tbody').append(rows);
-                },
-                error: function (xhr, status, error) {
-                    console.log(error);
-                }
-            });
-        });
-    </script>
-}

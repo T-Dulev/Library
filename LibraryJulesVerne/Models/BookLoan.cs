@@ -5,12 +5,13 @@ namespace LibraryJulesVerne.Models
     public class BookLoan
     {
         [Key]
-        public int LoanId { get; set; }
-        public int BookId { get; set; }
-        public int ReaderId { get; set; }
-        public DateTime BorrowedDate { get; set; }
-        public DateTime? ReturnedDate { get; set; }
+        public int loan_id { get; set; }
+        public int book_id { get; set; }
+        public int reader_id { get; set; }
+        public DateTime borrowed_date { get; set; }
+        public DateTime? returned_date { get; set; }
 
+        // Навигационни свойства към Book и Reader
         public Book? Book { get; set; }
         public Reader? Reader { get; set; }
     }

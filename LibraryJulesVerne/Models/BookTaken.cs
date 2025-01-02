@@ -14,7 +14,7 @@ namespace LibraryJulesVerne.Models
             public string? FirstName { get; set; }
             public string? LastName { get; set; }
             public string? EGN { get; set; }
-            public string? email { get; set; }
+            public string? Email { get; set; }
 
             public DateTime? borrowed_date { get; set; }
 

@@ -1,12 +1,17 @@
-﻿namespace LibraryJulesVerne.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LibraryJulesVerne.Models
 {
     public class Reader
     {
-        public int Id { get; set; }
-        public required string FirstName { get; set; }
-        public required string LastName { get; set; }
-        public required string EGN { get; set; }
-        public required string email { get; set; }
+        [Key]
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EGN { get; set; }
+        public string Email { get; set; }
 
+        // Навигационно свойство към BookLoans
+        public ICollection<BookLoan> BookLoans { get; set; }
     }
 }

@@ -32,11 +32,6 @@ namespace LibraryJulesVerne.Controllers
             return View();
         }
 
-        public IActionResult BookTaken()
-        {
-            return View(GetUnreturnedBooks());
-        }
-
         public IActionResult BookCreate()
         {
             return View();
@@ -86,28 +81,34 @@ namespace LibraryJulesVerne.Controllers
             return randomBooks;
         }
 
-        [HttpGet("unreturned")]
-        public async Task<IActionResult> GetUnreturnedBooks()
+        public IActionResult BookTaken()
         {
-            var _context = new LibraryJulesVerneContext();
-            var unreturnedBooks = await _context.BookLoans
+            var unreturnedBooks = GetUnreturnedBooks();
+
+            return View(unreturnedBooks);
+        }
+
+        public List<UnreturnedBook> GetUnreturnedBooks()
+        {
+            using var _context = new LibraryJulesVerneContext();
+            var unreturnedBooks = _context.BookLoans
                 .Include(bl => bl.Book)
                 .Include(bl => bl.Reader)
-                .Where(bl => bl.ReturnedDate == null)
-                .Select(bl => new
+                .Where(bl => bl.returned_date == null)
+                .Select(bl => new UnreturnedBook
                 {
                     Title = bl.Book.Title,
                     Author = bl.Book.Author,
                     FirstName = bl.Reader.FirstName,
                     LastName = bl.Reader.LastName,
                     EGN = bl.Reader.EGN,
-                    Email = bl.Reader.email,
-                    BorrowedDate = bl.BorrowedDate
+                    Email = bl.Reader.Email,
+                    BorrowedDate = bl.borrowed_date
                 })
-                .ToListAsync();
+                .ToList();
 
-            return Ok(unreturnedBooks);
+            return unreturnedBooks;
         }
-
     }
 }
+
