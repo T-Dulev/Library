@@ -1,0 +1,70 @@
+﻿@page "/Readers/Details/{id}"
+@model LibraryJulesVerne.Models.Reader
+
+@{
+    ViewData["Title"] = "Детайли за читател";
+}
+
+<h2>Детайли за читател</h2>
+
+<div>
+    <h4>Читател</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Име</dt>
+        <dd class="col-sm-10">@Model.FirstName @Model.LastName</dd>
+        <dt class="col-sm-2">ЕГН</dt>
+        <dd class="col-sm-10">@Model.EGN</dd>
+        <dt class="col-sm-2">Имейл</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+</div>
+
+<h3>Търсене на книги</h3>
+<form id="searchFormBooks">
+    <label for="search_term_books">Търсене по заглавие или автор:</label>
+
+    <input type="text" id="search_term_books" name="search_term_books" required>
+    <input type="submit" value="Търси">
+</form>
+<div id="resultsBooks"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('searchFormBooks');
+        const resultsDiv = document.getElementById('resultsBooks');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('search_term_books').value;
+            try {
+                const response = await fetch(`http://localhost:5000/Books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+                const data = await response.json();
+                let output = '';
+                if (data.length > 0) {
+                    output += '<ul>';
+                    for (const book of data) {
+                        output += `<li><a href="#" onclick="takeBook(${book.id}, ${Model.Id})">${book.Title}</a></li>`;
+                    }
+                    output += '</ul>';
+                } else {
+                    output = 'Няма намерени резултати.';
+                }
+                resultsDiv.innerHTML = output;
+            } catch (error) {
+                console.error('Error:', error);
+                resultsDiv.innerHTML = 'Грешка при търсенето.';
+            }
+        });
+    });
+
+    async function takeBook(bookId, readerId) {
+        try {
+            await fetch(`http://localhost:5000/api/TakeBook?bookId=${bookId}&readerId=${readerId}`, { method: 'POST' });
+            alert('Книгата беше успешно взета.');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Грешка при вземането на книгата.');
+        }
+    }
+</script>

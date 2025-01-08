@@ -9,7 +9,7 @@
     <div class="col-md-4">
         <h1>Търсене на читатели</h1>
         <form id="searchFormReaders">
-            <label for="search_term_readers">Търсене по име или фамилия:</label>
+            <label for="search_term_readers">Търсене по име или фамилия:</label><br/>
             <input type="text" id="search_term_readers" name="search_term_readers" required>
             <input type="submit" value="Търси">
         </form>
@@ -24,13 +24,13 @@
                     event.preventDefault();
                     const searchTerm = document.getElementById('search_term_readers').value;
                     try {
-                        const response = await fetch(`http://localhost:5000/readers?name=${encodeURIComponent(searchTerm)}`);
+                        const response = await fetch(`http://localhost:5000/Readers?name=${encodeURIComponent(searchTerm)}`);
                         const data = await response.json();
                         let output = '';
                         if (data.length > 0) {
                             output += '<ul>';
                             for (const reader of data) {
-                                output += `<li>${reader.firstName} ${reader.lastName}</li>`;
+                                output += `<li><a href="http://localhost:5000/Readers/Details/${reader.id}">${reader.firstName} ${reader.lastName} </a></li>`;
                             }
                             output += '</ul>';
                         } else {

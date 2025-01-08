@@ -8,6 +8,6 @@
         public string LastName { get; set; }
         public string EGN { get; set; }
         public string Email { get; set; }
-        public DateTime BorrowedDate { get; set; }
+        public DateOnly BorrowedDate { get; set; }
     }
 }

@@ -103,12 +103,13 @@ namespace LibraryJulesVerne.Controllers
                     LastName = bl.Reader.LastName,
                     EGN = bl.Reader.EGN,
                     Email = bl.Reader.Email,
-                    BorrowedDate = bl.borrowed_date
+                    BorrowedDate = DateOnly.FromDateTime(bl.borrowed_date)
                 })
                 .ToList();
 
             return unreturnedBooks;
         }
+
     }
 }
 
