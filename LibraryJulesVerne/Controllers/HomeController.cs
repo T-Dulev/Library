@@ -42,6 +42,24 @@ namespace LibraryJulesVerne.Controllers
             return View();
         }
 
+        // GET: Home/Details/{id}
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var _context = new LibraryJulesVerneContext();
+            var reader = await _context.Readers.FindAsync(id);
+            if (reader == null)
+            {
+                return NotFound();
+            }
+
+            return View(reader);
+        }
+
         // POST: Home/Create
         [HttpPost("Create")]
         public async Task<IActionResult> CreateBook([FromBody] Book book)
