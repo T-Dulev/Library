@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "H:\\VS2022\\Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\takebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\takebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\readerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\readerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\books.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\books.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\unreturnedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\unreturnedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\bookloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\bookloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\booktaken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\booktaken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\libraryjulesvernecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\libraryjulesvernecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\books.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\books.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -45,34 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\unreturnedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\unreturnedbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\takebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\takebookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\bookloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\bookloan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\views\\home\\booktaken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\views\\home\\booktaken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|h:\\vs2022\\library\\libraryjulesverne\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7B4B713-DC80-41DB-A2DE-4C9F5671B94C}|LibraryJulesVerne\\LibraryJulesVerne.csproj|solutionrelative:libraryjulesverne\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5253A914-4CC7-4F21-8F37-BE9B13DC2395}|GenerateLibrary\\GenerateLibrary.csproj|h:\\vs2022\\library\\generatelibrary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,78 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Details.cshtml",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Details.cshtml",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Details.cshtml",
-              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T23:00:54.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T22:46:45.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UnreturnedBook.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\UnreturnedBook.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\UnreturnedBook.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\UnreturnedBook.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Models\\UnreturnedBook.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T15:49:31.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Books.cshtml",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Books.cshtml",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Books.cshtml",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Books.cshtml",
-              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Books.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T21:56:18.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Readers.cshtml",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
-              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-17T22:24:23.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\HomeController.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\HomeController.cs*",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAuwIgAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-01T21:35:27.726Z",
               "EditorCaption": ""
@@ -185,12 +116,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Details.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Details.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAewF4AAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T23:00:54.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Reader.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Reader.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\Reader.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Reader.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\Models\\Reader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T21:52:46.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookLoan.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\BookLoan.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\BookLoan.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\BookLoan.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\Models\\BookLoan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T12:55:35.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TakeBookController.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\TakeBookController.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\TakeBookController.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\TakeBookController.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\TakeBookController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T22:27:28.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnreturnedBook.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\UnreturnedBook.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\UnreturnedBook.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\UnreturnedBook.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\Models\\UnreturnedBook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T15:49:31.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ReadersController.cs",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\ReadersController.cs",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\ReadersController.cs",
               "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\ReadersController.cs",
               "RelativeToolTip": "LibraryJulesVerne\\Controllers\\ReadersController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAewEQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T23:21:39.725Z",
               "EditorCaption": ""
@@ -198,6 +194,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T23:23:40.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Readers.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
+              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Readers.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T22:24:23.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Books.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Books.cshtml",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Books.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Books.cshtml",
+              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Books.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-15T21:56:18.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookTaken.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
+              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-01T21:59:38.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LibraryJulesVerneContext.cs",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "RelativeToolTip": "LibraryJulesVerne\\LibraryJulesVerneContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T22:50:19.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\_ViewImports.cshtml",
@@ -210,20 +271,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LibraryJulesVerneContext.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\LibraryJulesVerneContext.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\LibraryJulesVerneContext.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\LibraryJulesVerneContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T22:50:19.901Z",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LibraryJulesVerne\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T22:46:45.266Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\_ViewStart.cshtml",
@@ -236,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\appsettings.json",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\appsettings.json",
@@ -249,19 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TakeBookController.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\TakeBookController.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\TakeBookController.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\TakeBookController.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\TakeBookController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T22:27:28.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Program.cs",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Program.cs",
@@ -274,68 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Reader.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Reader.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\Reader.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Reader.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Models\\Reader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T21:52:46.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BookTaken.cshtml",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
-              "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\BookTaken.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-01T21:59:38.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BookLoan.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\BookLoan.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\BookLoan.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\BookLoan.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Models\\BookLoan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T12:55:35.384Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Book.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\Book.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\Book.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Models\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T21:52:08.087Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "BooksController.cs",
-              "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
-              "RelativeDocumentMoniker": "LibraryJulesVerne\\Controllers\\BooksController.cs",
-              "ToolTip": "H:\\VS2022\\Library\\LibraryJulesVerne\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "LibraryJulesVerne\\Controllers\\BooksController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAiwHQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:23:40.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\VS2022\\Library\\GenerateLibrary\\Program.cs",
               "RelativeDocumentMoniker": "GenerateLibrary\\Program.cs",
@@ -343,11 +331,12 @@
               "RelativeToolTip": "GenerateLibrary\\Program.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAqwFUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T22:57:13.218Z"
+              "WhenOpened": "2024-12-20T22:57:13.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "BookTaken.cs",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Models\\BookTaken.cs",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Models\\BookTaken.cs",
@@ -355,11 +344,12 @@
               "RelativeToolTip": "LibraryJulesVerne\\Models\\BookTaken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T22:04:17.539Z"
+              "WhenOpened": "2025-01-01T22:04:17.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "H:\\VS2022\\Library\\LibraryJulesVerne\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "LibraryJulesVerne\\Views\\Home\\Privacy.cshtml",
@@ -367,11 +357,12 @@
               "RelativeToolTip": "LibraryJulesVerne\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T22:17:26.22Z"
+              "WhenOpened": "2025-01-02T22:17:26.22Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "GenerateLibrary.csproj",
               "DocumentMoniker": "H:\\VS2022\\Library\\GenerateLibrary\\GenerateLibrary.csproj",
               "RelativeDocumentMoniker": "GenerateLibrary\\GenerateLibrary.csproj",
@@ -379,7 +370,8 @@
               "RelativeToolTip": "GenerateLibrary\\GenerateLibrary.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-20T22:57:10.903Z"
+              "WhenOpened": "2024-12-20T22:57:10.903Z",
+              "EditorCaption": ""
             }
           ]
         }

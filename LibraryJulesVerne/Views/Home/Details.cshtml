@@ -19,6 +19,38 @@
     </dl>
 </div>
 
+<h3>Взети книги</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Заглавие</th>
+            <th>ISBN</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+            <th>Дата на вземане</th>
+        </tr>
+    </thead>
+    @if (Model.BookLoans != null && Model.BookLoans.Any())
+    {
+        @foreach (var bookLoan in Model.BookLoans)
+        {
+            <tr>
+                <td>@bookLoan.Book?.Title</td>
+                <td>@bookLoan.Book?.Isbn</td>
+                <td>@bookLoan.Book?.Author</td>
+                <td>@bookLoan.Book?.Genre</td>
+                <td>@bookLoan.borrowed_date.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5">Няма взети книги.</td>
+        </tr>
+    }
+</table>
+
 <h3>Търсене на книги</h3>
 <form id="searchFormBooks">
     <label for="search_term_books">Търсене по заглавие или автор:</label>
@@ -43,7 +75,7 @@
                 if (data.length > 0) {
                     output += '<ul>';
                     for (const book of data) {
-                        output += `<li><a href="#" onclick="takeBook(${book.id}, ${Model.Id})">${book.Title}</a></li>`;
+                        output += `<li><a href="#" onclick="takeBook(${book.id}, ${@Model.Id})">${book.title}</a></li>`;
                     }
                     output += '</ul>';
                 } else {
@@ -59,7 +91,7 @@
 
     async function takeBook(bookId, readerId) {
         try {
-            await fetch(`http://localhost:5000/api/TakeBook?bookId=${bookId}&readerId=${readerId}`, { method: 'POST' });
+            await fetch(`http://localhost:5000/TakeBook?bookId=${bookId}&readerId=${readerId}`, { method: 'POST' });
             alert('Книгата беше успешно взета.');
         } catch (error) {
             console.error('Error:', error);

@@ -21,6 +21,6 @@ namespace LibraryJulesVerne.Models
         public int AvailableCount { get; set; }
 
         // Навигационно свойство към BookLoans
-        public ICollection<BookLoan> BookLoans { get; set; }
+        public ICollection<BookLoan>? BookLoans { get; set; }
     }
 }

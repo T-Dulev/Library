@@ -51,7 +51,10 @@ namespace LibraryJulesVerne.Controllers
             }
 
             var _context = new LibraryJulesVerneContext();
-            var reader = await _context.Readers.FindAsync(id);
+            var reader = await _context.Readers
+                .Include(r => r.BookLoans)
+                .ThenInclude(bl => bl.Book)
+                .FirstOrDefaultAsync(r => r.Id == id);
             if (reader == null)
             {
                 return NotFound();
@@ -128,6 +131,35 @@ namespace LibraryJulesVerne.Controllers
             return unreturnedBooks;
         }
 
+        [HttpPost("TakeBook")]
+        public async Task<IActionResult> TakeBook([FromQuery] int bookId, [FromQuery] int readerId)
+        {
+            using var _context = new LibraryJulesVerneContext();
+            var book = await _context.Books.FindAsync(bookId);
+            var reader = await _context.Readers.FindAsync(readerId);
+
+            if (book == null || reader == null)
+            {
+                return BadRequest("Невалидни идентификатори.");
+            }
+
+            if (book.AvailableCount <= 0)
+            {
+                return BadRequest("Книгата не е налична.");
+            }
+
+            var bookLoan = new BookLoan
+            {
+                Book = book,
+                Reader = reader,
+                borrowed_date = DateTime.Now
+            };
+
+            _context.Add(bookLoan);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }
 
