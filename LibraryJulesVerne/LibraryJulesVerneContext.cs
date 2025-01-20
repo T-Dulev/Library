@@ -23,6 +23,11 @@ namespace LibraryJulesVerne.Context
                 .HasOne(bl => bl.Reader)
                 .WithMany(r => r.BookLoans)
                 .HasForeignKey(bl => bl.reader_id);
+
+            modelBuilder.Entity<Book>()
+                .HasMany(b => b.BookLoans)
+                .WithOne(bl => bl.Book)
+                .HasForeignKey(bl => bl.book_id);
         }
     }
 }

@@ -30,7 +30,7 @@
                         if (data.length > 0) {
                             output += '<ul>';
                             for (const book of data) {
-                                output += `<li>${book.id} ${book.title} - ${book.author} `;
+                                output += `<li>${book.id} ${book.title} - ${book.author} (налични ${book.availableCount})`;
                                 output += `<button onclick="deleteBook(${book.id})">Изтрий</button>`;
                                 output += `</li>`;
                             }

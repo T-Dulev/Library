@@ -25,14 +25,27 @@ namespace LibraryJulesVerne.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks(string title)
         {
-            if (title != "*")
+            var booksQuery = _context.Books.AsQueryable();
+
+            if (!string.IsNullOrEmpty(title) && title != "*")
             {
-                return await _context.Books.Where(a => (a.Title != null && a.Title.Contains(title)) || (a.Author != null && a.Author.Contains(title))).ToListAsync();
+                booksQuery = booksQuery.Where(b => b.Title.Contains(title) || b.Author.Contains(title));
             }
-            else
-            {
-                return await _context.Books.ToListAsync();
-            }
+
+            var joinedQuery = from book in booksQuery
+                              join loan in _context.BookLoans on book.Id equals loan.book_id into loansGrouped
+                              from loan in loansGrouped.DefaultIfEmpty()
+                              select new
+                              {
+                                  Book = book,
+                                  AvailableCount = book.AvailableCount - loansGrouped.Count(l => l.returned_date == null)
+                              };
+
+            var result = await joinedQuery.Select(j => j.Book)
+                .Include(bl => bl.BookLoans)
+                .ToListAsync();
+
+            return Ok(result);
         }
 
         // POST: api/Books

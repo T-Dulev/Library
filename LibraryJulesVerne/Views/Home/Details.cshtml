@@ -28,6 +28,7 @@
             <th>Автор</th>
             <th>Жанр</th>
             <th>Дата на вземане</th>
+            <th>Дата на връщане</th>
         </tr>
     </thead>
     @if (Model.BookLoans != null && Model.BookLoans.Any())
@@ -40,6 +41,7 @@
                 <td>@bookLoan.Book?.Author</td>
                 <td>@bookLoan.Book?.Genre</td>
                 <td>@bookLoan.borrowed_date.ToString("yyyy-MM-dd")</td>
+                <td>@bookLoan.returned_date?.ToString("yyyy-MM-dd")</td>
             </tr>
         }
     }
@@ -51,7 +53,7 @@
     }
 </table>
 
-<h3>Търсене на книги</h3>
+<h3>Взимане на книги</h3>
 <form id="searchFormBooks">
     <label for="search_term_books">Търсене по заглавие или автор:</label>
 
