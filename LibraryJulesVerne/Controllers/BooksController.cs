@@ -2,6 +2,7 @@
 using LibraryJulesVerne.Context;
 using LibraryJulesVerne.Models;
 using Microsoft.EntityFrameworkCore;
+using LibraryJulesVerne.Models.Dto;
 
 namespace LibraryJulesVerne.Controllers
 {
@@ -23,7 +24,7 @@ namespace LibraryJulesVerne.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBooks(string title)
+        public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks(string title)
         {
             var booksQuery = _context.Books.AsQueryable();
 
@@ -32,20 +33,17 @@ namespace LibraryJulesVerne.Controllers
                 booksQuery = booksQuery.Where(b => b.Title.Contains(title) || b.Author.Contains(title));
             }
 
-            var joinedQuery = from book in booksQuery
-                              join loan in _context.BookLoans on book.Id equals loan.book_id into loansGrouped
-                              from loan in loansGrouped.DefaultIfEmpty()
-                              select new
-                              {
-                                  Book = book,
-                                  AvailableCount = book.AvailableCount - loansGrouped.Count(l => l.returned_date == null)
-                              };
+            var books = await booksQuery.Select(b => new BookDto
+            {
+                Id = b.Id,
+                Title = b.Title,
+                Isbn = b.Isbn,
+                Author = b.Author,
+                Genre = b.Genre,
+                AvailableCount = b.AvailableCount - _context.BookLoans.Count(l => l.book_id == b.Id && l.returned_date == null)
+            }).ToListAsync();
 
-            var result = await joinedQuery.Select(j => j.Book)
-                .Include(bl => bl.BookLoans)
-                .ToListAsync();
-
-            return Ok(result);
+            return Ok(books);
         }
 
         // POST: api/Books
