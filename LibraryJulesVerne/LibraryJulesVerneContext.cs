@@ -17,17 +17,20 @@ namespace LibraryJulesVerne.Context
             modelBuilder.Entity<BookLoan>()
                 .HasOne(bl => bl.Book)
                 .WithMany(b => b.BookLoans)
-                .HasForeignKey(bl => bl.book_id);
+                .HasForeignKey(bl => bl.book_id)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<BookLoan>()
                 .HasOne(bl => bl.Reader)
                 .WithMany(r => r.BookLoans)
-                .HasForeignKey(bl => bl.reader_id);
+                .HasForeignKey(bl => bl.reader_id)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.BookLoans)
                 .WithOne(bl => bl.Book)
-                .HasForeignKey(bl => bl.book_id);
+                .HasForeignKey(bl => bl.book_id)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

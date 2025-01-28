@@ -62,19 +62,23 @@ namespace LibraryJulesVerne.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteBook(int id)
+        public async Task<IActionResult> DeleteBook(int id)
         {
-            var bookToDelete = _context.Books.FirstOrDefault(b => b.Id == id);
-            if (bookToDelete != null)
+            var bookToDelete = await _context.Books.FindAsync(id);
+            if (bookToDelete == null)
             {
-                _context.Books.Remove(bookToDelete);
-                _context.SaveChanges();
-                return NoContent(); // Връща статус код 204 No Content
+                return NotFound();
             }
-            else
-            {
-                return NotFound(); // Връща статус код 404 Not Found, ако книгата не е намерена
-            }
+
+            // Първо изтриваме всички BookLoans, свързани с тази книга
+            var loansToDelete = _context.BookLoans.Where(bl => bl.book_id == id).ToList();
+            _context.BookLoans.RemoveRange(loansToDelete);
+
+            // След това изтриваме самата книга
+            _context.Books.Remove(bookToDelete);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         //// GET: api/Books/5

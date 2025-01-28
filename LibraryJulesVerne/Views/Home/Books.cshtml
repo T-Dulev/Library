@@ -31,7 +31,7 @@
                             output += '<ul>';
                             for (const book of data) {
                                 output += `<li>${book.id} ${book.title} - ${book.author} (налични ${book.availableCount})`;
-                                output += `<button onclick="deleteBook(${book.id})">Изтрий</button>`;
+                                output += `<a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
                                 output += `</li>`;
                             }
                             output += '</ul>';
@@ -51,10 +51,10 @@
                     const response = await fetch(`http://localhost:5000/books/${bookId}`, {
                         method: 'DELETE'
                     });
-                    if (response.ok) {
+                    if (response.status === 204) {
                         // Обновяване на списъка след успешно изтриване
                         await searchAndDisplayResults();
-                    } else {
+                    } else if (!response.ok) {
                         alert('Грешка при изтриването.');
                     }
                 } catch (error) {
@@ -65,6 +65,7 @@
 
             async function searchAndDisplayResults() {
                 const searchTerm = document.getElementById('search_term').value;
+                const resultsDiv = document.getElementById('resultsBooks');
                 const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
                 const data = await response.json();
                 let output = '';
@@ -72,7 +73,7 @@
                     output += '<ul>';
                     for (const book of data) {
                         output += `<li>${book.id} ${book.title} - ${book.author} ${book.isbn} `;
-                        output += `<button onclick="deleteBook(${book.id})">Изтрий</button>`;
+                        output += `<a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
                         output += `</li>`;
                     }
                     output += '</ul>';
