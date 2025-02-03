@@ -55,12 +55,39 @@ namespace LibraryJulesVerne.Controllers
                 .Include(r => r.BookLoans)
                 .ThenInclude(bl => bl.Book)
                 .FirstOrDefaultAsync(r => r.Id == id);
+
             if (reader == null)
             {
                 return NotFound();
             }
 
+            // Сортираме книгите според условията
+            reader.BookLoans = reader.BookLoans
+                .OrderByDescending(bl => !bl.returned_date.HasValue) // Невърнатите книги първо
+                .ThenByDescending(bl => bl.borrowed_date) // В обратен ред на датата на взимане
+                .ToList();
+
             return View(reader);
+        }
+
+        // POST: Home/ReturnBook/{loanId}
+        public async Task<IActionResult> ReturnBook(int loanId)
+        {
+            var _context = new LibraryJulesVerneContext();
+            var bookLoan = await _context.BookLoans
+                .Include(bl => bl.Book)
+                .Include(bl => bl.Reader)
+                .FirstOrDefaultAsync(bl => bl.loan_id == loanId);
+
+            if (bookLoan == null || bookLoan.returned_date != null)
+            {
+                return BadRequest();
+            }
+
+            bookLoan.returned_date = DateTime.Now;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", new { id = bookLoan.Reader.Id });
         }
 
         // POST: Home/Create
@@ -120,6 +147,7 @@ namespace LibraryJulesVerne.Controllers
                 {
                     Title = bl.Book.Title,
                     Author = bl.Book.Author,
+                    ReaderId = bl.reader_id,
                     FirstName = bl.Reader.FirstName,
                     LastName = bl.Reader.LastName,
                     EGN = bl.Reader.EGN,

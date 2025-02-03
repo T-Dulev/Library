@@ -41,7 +41,16 @@
                 <td>@bookLoan.Book?.Author</td>
                 <td>@bookLoan.Book?.Genre</td>
                 <td>@bookLoan.borrowed_date.ToString("yyyy-MM-dd")</td>
-                <td>@bookLoan.returned_date?.ToString("yyyy-MM-dd")</td>
+                <td>
+                    @if (bookLoan.returned_date == null)
+                    {
+                        <a asp-action="ReturnBook" asp-route-loanId="@bookLoan.loan_id">връщане</a>
+                    }
+                    else
+                    {
+                        @bookLoan.returned_date?.ToString("yyyy-MM-dd")
+                    }
+                </td>
             </tr>
         }
     }

@@ -20,8 +20,8 @@
                 <tr>
                     <td>@book.Title</td>
                     <td>@book.Author</td>
-                    <td>@book.FirstName @book.LastName</td>
-                    <td>@book.BorrowedDate</td>
+                    <td><a href="http://localhost:5000/Home/Details/@book.ReaderId">@book.FirstName @book.LastName</a></td>
+                    <td>@book.BorrowedDate.ToString("yyyy-MM-dd")</td>
                 </tr>
             }
         </tbody>
