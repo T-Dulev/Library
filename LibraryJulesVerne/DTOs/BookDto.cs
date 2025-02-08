@@ -1,4 +1,4 @@
-﻿namespace LibraryJulesVerne.Models.Dto
+﻿namespace LibraryJulesVerne.DTOs
 {
     public class BookDto
     {

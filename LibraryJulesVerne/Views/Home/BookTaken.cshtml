@@ -1,6 +1,11 @@
-﻿@model IEnumerable<LibraryJulesVerne.Models.UnreturnedBook>
+﻿@model IEnumerable<LibraryJulesVerne.DTOs.UnreturnedBookDto>
 @{
     ViewData["Title"] = "Взети книги";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
 }
 
 <h1>Взети книги</h1>
@@ -12,6 +17,7 @@
                 <th>Автор</th>
                 <th>Читател</th>
                 <th>Дата на вземане</th>
+                <th>Връщане</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +28,9 @@
                     <td>@book.Author</td>
                     <td><a href="http://localhost:5000/Home/Details/@book.ReaderId">@book.FirstName @book.LastName</a></td>
                     <td>@book.BorrowedDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <a asp-action="ReturnBook" asp-route-loanId="@book.loan_id">връщане</a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -31,3 +40,25 @@
 <div>
     <a asp-action="Index">Начало</a>
 </div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.return-book').on('click', function (event) {
+                event.preventDefault(); // Спира стандартното поведение на линка
+                const loanId = $(this).attr('href').split('/')[4]; // Извлича ID от URL адреса
+                $.ajax({
+                    url: '/Home/ReturnBook/' + loanId,
+                    type: 'POST',
+                    success: function (response) {
+                        location.reload(); // Обновява страницата след успешна заявка
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Грешка при връщане на книгата.');
+                    }
+                });
+            });
+        });
+    </script>
+}

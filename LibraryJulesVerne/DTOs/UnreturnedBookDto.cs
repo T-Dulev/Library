@@ -1,7 +1,8 @@
-﻿namespace LibraryJulesVerne.Models
+﻿namespace LibraryJulesVerne.DTOs
 {
-    public class UnreturnedBook
+    public class UnreturnedBookDto
     {
+        public int loan_id { get; set; }
         public string? Title { get; set; }
         public string? Author { get; set; }
         public int ReaderId { get; set; }

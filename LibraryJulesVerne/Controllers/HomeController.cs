@@ -1,5 +1,6 @@
 using LibraryJulesVerne.Context;
 using LibraryJulesVerne.Models;
+using LibraryJulesVerne.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -87,7 +88,26 @@ namespace LibraryJulesVerne.Controllers
             bookLoan.returned_date = DateTime.Now;
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Details", new { id = bookLoan.Reader.Id });
+            // Запазване на съобщение за успех в TempData
+            TempData["SuccessMessage"] = "Книгата беше успешно върната.";
+
+            string refererUrl = Request.Headers["Referer"].ToString();
+
+            if (refererUrl.Contains("/Details"))
+            {
+                // Пренасочва към страницата с детайли на читателя
+                return RedirectToAction("Details", new { id = bookLoan.Reader.Id });
+            }
+            else if (refererUrl.Contains("/BookTaken"))
+            {
+                // Пренасочва към страницата със списъка с взети книги
+                return RedirectToAction("BookTaken");
+            }
+            else
+            {
+                // По подразбиране пренасочва към началната страница или друга подходяща страница
+                return RedirectToAction("Index");
+            }
         }
 
         // POST: Home/Create
@@ -136,15 +156,16 @@ namespace LibraryJulesVerne.Controllers
             return View(unreturnedBooks);
         }
 
-        public List<UnreturnedBook> GetUnreturnedBooks()
+        public List<UnreturnedBookDto> GetUnreturnedBooks()
         {
             using var _context = new LibraryJulesVerneContext();
             var unreturnedBooks = _context.BookLoans
                 .Include(bl => bl.Book)
                 .Include(bl => bl.Reader)
                 .Where(bl => bl.returned_date == null)
-                .Select(bl => new UnreturnedBook
+                .Select(bl => new UnreturnedBookDto
                 {
+                    loan_id = bl.loan_id,   
                     Title = bl.Book.Title,
                     Author = bl.Book.Author,
                     ReaderId = bl.reader_id,

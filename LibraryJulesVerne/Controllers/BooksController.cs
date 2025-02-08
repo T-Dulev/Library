@@ -2,7 +2,7 @@
 using LibraryJulesVerne.Context;
 using LibraryJulesVerne.Models;
 using Microsoft.EntityFrameworkCore;
-using LibraryJulesVerne.Models.Dto;
+using LibraryJulesVerne.DTOs;
 
 namespace LibraryJulesVerne.Controllers
 {
