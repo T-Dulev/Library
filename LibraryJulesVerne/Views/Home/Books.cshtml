@@ -5,85 +5,134 @@
 }
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <h1>Търсене на книги</h1>
-        <form id="searchFormBooks">
-            <label for="search_term">Търсене по заглавие или автор:</label><br />
-            <input type="text" id="search_term" name="search_term" required>
-            <input type="submit" value="Търси">
-        </form>
-        <div id="resultsBooks">въведете * за всички</div>
+<div class="row">        
+    <table width="100%">
+        <tr>
+            <td colspan="2">
+                <h1>Търсене на книги</h1>
+                <form id="searchFormBooks">
+                    <label for="search_term">Търсене по заглавие или автор (въведете * за всички):</label>
+                    <input type="text" id="search_term" name="search_term" required>
+                    <input type="submit" value="Търси">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <div id="resultsBooks"></div>
+            </td>
+            <td valign="top" align="left">
+                <div id="resultsBook"></div>
+            </td>
+        </tr>
+    </table>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const form = document.getElementById('searchFormBooks');
-                const resultsDiv = document.getElementById('resultsBooks');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('searchFormBooks');
+            const resultsDiv = document.getElementById('resultsBooks');
 
-                form.addEventListener('submit', async function (event) {
-                    event.preventDefault();
-                    const searchTerm = document.getElementById('search_term').value;
-                    try {
-                        const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
-                        const data = await response.json();
-                        let output = '';
-                        if (data.length > 0) {
-                            output += '<ul>';
-                            for (const book of data) {
-                                output += `<li>${book.id} ${book.title} - ${book.author} (налични ${book.availableCount})`;
-                                output += `<a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
-                                output += `</li>`;
-                            }
-                            output += '</ul>';
-                        } else {
-                            output = 'Няма намерени резултати.';
-                        }
-                        resultsDiv.innerHTML = output;
-                    } catch (error) {
-                        console.error('Error:', error);
-                        resultsDiv.innerHTML = 'Грешка при търсенето.';
-                    }
-                });
-            });
-
-            async function deleteBook(bookId) {
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                const searchTerm = document.getElementById('search_term').value;
                 try {
-                    const response = await fetch(`http://localhost:5000/books/${bookId}`, {
-                        method: 'DELETE'
-                    });
-                    if (response.status === 204) {
-                        // Обновяване на списъка след успешно изтриване
-                        await searchAndDisplayResults();
-                    } else if (!response.ok) {
-                        alert('Грешка при изтриването.');
+                    const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+                    const data = await response.json();
+                    let output = '';
+                    if (data.length > 0) {
+                        output += '<ul>';
+                        for (const book of data) {
+                            output += `<li><a href="#" onclick="showBookDetails(${book.id})">${book.title}</a> - ${book.author} (налични ${book.availableCount})`;
+                            output += ` <a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
+                            output += `</li>`;
+                        }
+                        output += '</ul>';
+                    } else {
+                        output = 'Няма намерени резултати.';
                     }
+                    resultsDiv.innerHTML = output;
                 } catch (error) {
                     console.error('Error:', error);
+                    resultsDiv.innerHTML = 'Грешка при търсенето.';
+                }
+            });
+        });
+
+        async function showBookDetails(bookId) {
+            try {
+                const response = await fetch(`http://localhost:5000/books/${bookId}`);
+                if (response.ok) {
+                    const bookDetails = await response.json();
+                    displayBookDetails(bookDetails);
+                } else {
+                    alert('Грешка при зареждането на детайлите на книгата.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Грешка при зареждането на детайлите на книгата.');
+            }
+        }
+
+        function displayBookDetails(bookDetails) {
+            const detailsDiv = document.getElementById('resultsBook');
+            detailsDiv.className = 'book-details';
+            detailsDiv.innerHTML = `
+                            <h2>Детайли за книгата</h2>
+                            <p><strong>Заглавие:</strong> ${bookDetails.title}</p>
+                            <p><strong>Автор:</strong> ${bookDetails.author}</p>
+                            <p><strong>ISBN:</strong> ${bookDetails.isbn}</p>
+                            <p><strong>Жанр:</strong> ${bookDetails.genre}</p>
+                            <p><strong>Налични копия:</strong> ${bookDetails.availableCount}</p>
+                            <h3>Последни 5 заети книги:</h3>
+                            <ul>
+                                ${bookDetails.lastFiveLoans.map(loan => `
+                                    <li>
+                                        заета от: ${loan.borrowerName},
+                                        дата на заемане: ${new Date(loan.borrowedDate).toLocaleDateString()}, 
+                                        дата на връщане: ${loan.returnedDate ? new Date(loan.returnedDate).toLocaleDateString() : 'Не е върната'}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+        }
+
+        async function deleteBook(bookId) {
+            try {
+                const response = await fetch(`http://localhost:5000/books/${bookId}`, {
+                    method: 'DELETE'
+                });
+                if (response.status === 204) {
+                    // Обновяване на списъка след успешно изтриване
+                    await searchAndDisplayResults();
+                } else if (!response.ok) {
                     alert('Грешка при изтриването.');
                 }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Грешка при изтриването.');
             }
+        }
 
-            async function searchAndDisplayResults() {
-                const searchTerm = document.getElementById('search_term').value;
-                const resultsDiv = document.getElementById('resultsBooks');
-                const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
-                const data = await response.json();
-                let output = '';
-                if (data.length > 0) {
-                    output += '<ul>';
-                    for (const book of data) {
-                        output += `<li>${book.id} ${book.title} - ${book.author} ${book.isbn} `;
-                        output += `<a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
-                        output += `</li>`;
-                    }
-                    output += '</ul>';
-                } else {
-                    output = 'Няма намерени резултати.';
+        async function searchAndDisplayResults() {
+            const searchTerm = document.getElementById('search_term').value;
+            const resultsDiv = document.getElementById('resultsBooks');
+            const response = await fetch(`http://localhost:5000/books?title=${encodeURIComponent(searchTerm)}&author=${encodeURIComponent(searchTerm)}`);
+            const data = await response.json();
+            let output = '';
+            if (data.length > 0) {
+                output += '<ul>';
+                for (const book of data) {
+                    output += `<li><a href="#" onclick="showBookDetails(${book.id})">${book.title}</a> - ${book.author} ${book.isbn} `;
+                    output += `<a href="#" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази книга?') && deleteBook(${book.id})">Изтрий</a>`;
+                    output += `</li>`;
                 }
-                resultsDiv.innerHTML = output;
+                output += '</ul>';
+            } else {
+                output = 'Няма намерени резултати.';
             }
-        </script>
-    </div>
+            resultsDiv.innerHTML = output;
+        }
+    </script>
 </div>
 <br />
 <br />

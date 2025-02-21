@@ -95,30 +95,45 @@ namespace LibraryJulesVerne.Controllers
             return book;
         }
 
-        //// PUT: api/Books/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutBook(int id, Book book)
-        //{
-        //    if (id != book.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+        // GET: api/Books/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DetailedBookDto>> GetBookDetails(int id)
+        {
+            var book = await _context.Books
+                .Include(b => b.BookLoans)
+                .ThenInclude(bl => bl.Reader)
+                .FirstOrDefaultAsync(b => b.Id == id);
 
-        //    _context.Entry(book).State = EntityState.Modified;
-        //    await _context.SaveChangesAsync();
+            if (book == null)
+            {
+                return NotFound();
+            }
 
-        //    return NoContent();
-        //}
+            var lastFiveLoans = book.BookLoans
+                .OrderByDescending(l => l.borrowed_date)
+                .Take(5)
+                .Select(l => new BookLoanDto
+                {
+                    LoanId = l.loan_id,
+                    BorrowedDate = l.borrowed_date,
+                    ReturnedDate = l.returned_date,
+                    BorrowerName = l.Reader?.FirstName + ' ' + l.Reader?.LastName
+                })
+                .ToList();
 
-        //// POST: api/Books
-        //[HttpPost]
-        //public async Task<ActionResult<Book>> PostBook(Book book)
-        //{
-        //    _context.Books.Add(book);
-        //    await _context.SaveChangesAsync();
+            var bookDetails = new DetailedBookDto
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Isbn = book.Isbn,
+                Author = book.Author,
+                Genre = book.Genre,
+                AvailableCount = book.AvailableCount - _context.BookLoans.Count(l => l.book_id == book.Id && l.returned_date == null),
+                LastFiveLoans = lastFiveLoans
+            };
 
-        //    return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
-        //}
+            return Ok(bookDetails);
+        }
 
         public IActionResult GetRandomBooks()
         {
