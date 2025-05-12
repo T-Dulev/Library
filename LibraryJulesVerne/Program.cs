@@ -1,5 +1,7 @@
 using LibraryJulesVerne.Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 
 namespace LibraryJulesVerne
 {
@@ -12,6 +14,18 @@ namespace LibraryJulesVerne
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Добавяне на JWT обработка
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.Authority = "https://localhost:5000"; // URL на вашия Identity Server
+                options.Audience = "your-client-id"; // Клиентски идентификатор
+            });
+
             builder.Services.AddDbContext<LibraryJulesVerneContext>();
             //builder.Services.AddDbContext<LibraryJulesVerneContext>(options =>
             //options.UseSqlite("Data Source=../../Library.db"));
@@ -19,7 +33,10 @@ namespace LibraryJulesVerne
             builder.Services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
 
             var app = builder.Build();
 
@@ -36,6 +53,7 @@ namespace LibraryJulesVerne
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.MapControllerRoute(
                 name: "readers",
